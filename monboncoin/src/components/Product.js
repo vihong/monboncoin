@@ -9,7 +9,7 @@ class Product extends React.Component {
 		const isAvailable = status === 'available';
 
 		return (
-			<li className="menu-fish">
+			<li className="ad-online">
 				<img src={image} alt={image} />
 				<h3 className="fish-name">
 					{name}

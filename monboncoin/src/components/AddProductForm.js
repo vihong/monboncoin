@@ -57,6 +57,7 @@ class AddProductForm extends React.Component {
 					name="desc"
 					ref={this.descRef}
 					placeholder="Expliquez pourquoi votre produit est génial"
+					maxLength="160"
 				/>
 				<input
 					name="image"

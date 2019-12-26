@@ -5,7 +5,9 @@ class Navbar extends React.Component {
 	render() {
 		return (
 			<nav>
-				<h1>monboncoin.fr</h1>
+				<h1>
+					<a href="../">monboncoin.fr</a>
+				</h1>
 			</nav>
 		);
 	}

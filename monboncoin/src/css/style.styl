@@ -18,46 +18,8 @@ header.top
     display flex
     justify-content: center;
 
-    // This is a bunch of goofy CSS to make the logo look decent
-    .ofThe
-      display flex
-      font-size 3rem
-      color orange
-      justify-content: center;
-      align-items: center;
-      background url('images/anchor.svg') center no-repeat;
-      background-size cover
-      padding 0 1rem
-      .of
-        padding-right 2rem
-        position relative
-        right -0.5rem
-  h3
-    margin 0
-    font-size 2rem
-    color orange
-    position relative
-    display inline-block
-    span
-      background white
-      position relative
-      z-index 2
-      padding-left 1rem
-      padding-right 1rem
-    &:before, &:after
-      display block
-      z-index 1
-      background black
-      position absolute
-      width 130%
-      height 1px
-      content ''
-      top 5px
-      margin-left -15%
-    &:after
-      top auto
-      bottom 7px
-
+  h2
+    font-weight: bold
 
 .catch-of-the-day
   display flex
@@ -95,18 +57,6 @@ header.top
 input#fold:not(:checked) ~ #main
   .catch-of-the-day > *
       transform none
-
-label[for="fold"]
-  position absolute
-  top 1rem
-  left 1rem
-  text-transform uppercase
-  font-size 1.3rem
-  background black
-  color white
-  border 2px solid black
-  cursor pointer
-  padding 0.5rem 1rem
 
 input#fold
   display none
@@ -179,7 +129,6 @@ ul.order
     background white
     &:focus
       outline 0
-      background lighten(orange, 85%)
   textarea
     width 100%
   input:last-of-type
@@ -197,7 +146,7 @@ ul.order
   margin-top 2rem
   transform translateZ(0);
 
-.menu-fish
+.ad-online
   border-bottom 2px solid black
   border-top 1px solid black
   padding-bottom 2rem
@@ -205,17 +154,20 @@ ul.order
   margin-bottom 5px
   clear both
   overflow hidden
+  h3
+    font-size 1.9rem
+    font-weight bold
   p
     margin 0
-    font-size 1.8rem
+    font-size 1.6rem
   .fish-name
     margin 0
     display flex
     justify-content space-between
     align-items center
   .price
-    font-size 1.4rem
-    // color orange
+    font-size 1.6rem
+    color #f56a2c
     justify-content flex-end
     // font-family 'Open Sans Condensed'
   img
@@ -237,7 +189,7 @@ button, input[type=submit]
     color red
     background white
     border-color red
-    transform rotate(-10deg) scale(2) translateX(50%) translateY(-50%)
+    transform rotate(-10deg) scale(2) translateX(15%) translateY(-50%)
     &:hover
       color red
       cursor not-allowed
@@ -299,6 +251,9 @@ nav
     font-family 'Baloo Bhaina', cursive
     color #fff
     font-size 30px
+    a
+      text-decoration none
+      color #fff
 
 
 
@@ -336,7 +291,6 @@ nav
       padding-left 10px
       font-size 18px
   input::placeholder
-    color #d3d3d3
     border-radius 5px
   button
     background #fff

@@ -51,7 +51,7 @@
           transform: translateY(-100%) scale(3);
 }
 @font-face {
-  font-family: "haymakerregular";
+  font-family: "  font-family Roboto,sans-serif";
   src: url("./fonts/haymaker-webfont.eot");
   src: url("./fonts/haymaker-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/haymaker-webfont.woff") format("woff"), url("./fonts/haymaker-webfont.ttf") format("truetype"), url("./fonts/haymaker-webfont.svg#haymakerregular") format("svg");
   font-weight: normal;
@@ -274,53 +274,8 @@ header.top h1 {
   -webkit-box-pack: center;
           justify-content: center;
 }
-header.top h1 .ofThe {
-  display: -webkit-box;
-  display: flex;
-  font-size: 3rem;
-  color: #f5a623;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
-  background: url("images/anchor.svg") center no-repeat;
-  background-size: cover;
-  padding: 0 1rem;
-}
-header.top h1 .ofThe .of {
-  padding-right: 2rem;
-  position: relative;
-  right: -0.5rem;
-}
-header.top h3 {
-  margin: 0;
-  font-size: 2rem;
-  color: #f5a623;
-  position: relative;
-  display: inline-block;
-}
-header.top h3 span {
-  background: #fff;
-  position: relative;
-  z-index: 2;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-header.top h3:before,
-header.top h3:after {
-  display: block;
-  z-index: 1;
-  background: #000;
-  position: absolute;
-  width: 130%;
-  height: 1px;
-  content: '';
-  top: 5px;
-  margin-left: -15%;
-}
-header.top h3:after {
-  top: auto;
-  bottom: 7px;
+header.top h2 {
+  font-weight: bold;
 }
 .catch-of-the-day {
   display: -webkit-box;
@@ -368,18 +323,6 @@ header.top h3:after {
 input#fold:not(:checked) ~ #main .catch-of-the-day > * {
   -webkit-transform: none;
           transform: none;
-}
-label[for="fold"] {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  background: #000;
-  color: #fff;
-  border: 2px solid #000;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
 }
 input#fold {
   display: none;
@@ -468,7 +411,6 @@ ul.order li span.count span {
 .fish-edit textarea:focus,
 .fish-edit select:focus {
   outline: 0;
-  background: #fef2de;
 }
 .fish-edit textarea {
   width: 100%;
@@ -488,7 +430,7 @@ ul.order li span.count span {
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
 }
-.menu-fish {
+.ad-online {
   border-bottom: 2px solid #000;
   border-top: 1px solid #000;
   padding-bottom: 2rem;
@@ -497,11 +439,15 @@ ul.order li span.count span {
   clear: both;
   overflow: hidden;
 }
-.menu-fish p {
-  margin: 0;
-  font-size: 1.8rem;
+.ad-online h3 {
+  font-size: 1.9rem;
+  font-weight: bold;
 }
-.menu-fish .fish-name {
+.ad-online p {
+  margin: 0;
+  font-size: 1.6rem;
+}
+.ad-online .fish-name {
   margin: 0;
   display: -webkit-box;
   display: flex;
@@ -510,12 +456,13 @@ ul.order li span.count span {
   -webkit-box-align: center;
           align-items: center;
 }
-.menu-fish .price {
-  font-size: 1.4rem;
+.ad-online .price {
+  font-size: 1.6rem;
+  color: #f56a2c;
   -webkit-box-pack: end;
           justify-content: flex-end;
 }
-.menu-fish img {
+.ad-online img {
   float: left;
   width: 150px;
   margin-right: 1rem;
@@ -538,8 +485,8 @@ input[type=submit][disabled] {
   color: #d12028;
   background: #fff;
   border-color: #d12028;
-  -webkit-transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
-          transform: rotate(-10deg) scale(2) translateX(50%) translateY(-50%);
+  -webkit-transform: rotate(-10deg) scale(2) translateX(15%) translateY(-50%);
+          transform: rotate(-10deg) scale(2) translateX(15%) translateY(-50%);
 }
 button[disabled]:hover,
 input[type=submit][disabled]:hover {
@@ -634,6 +581,10 @@ nav h1 {
   color: #fff;
   font-size: 30px;
 }
+nav h1 a {
+  text-decoration: none;
+  color: #fff;
+}
 .login-form {
   font-family: Roboto, sans-serif;
   text-align: center;
@@ -675,15 +626,12 @@ nav h1 {
   font-size: 18px;
 }
 .login-form input::-webkit-input-placeholder {
-  color: #d3d3d3;
   border-radius: 5px;
 }
 .login-form input:-ms-input-placeholder {
-  color: #d3d3d3;
   border-radius: 5px;
 }
 .login-form input::placeholder {
-  color: #d3d3d3;
   border-radius: 5px;
 }
 .login-form button {
