@@ -256,6 +256,13 @@ h2 {
 h3 {
   font-size: 3rem;
 }
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaina|Roboto&display=swap");
+body {
+  background-image: url("https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-position: center top -100px;
+  background-size: cover;
+  background-attachment: fixed;
+}
 header.top {
   text-align: center;
 }
@@ -615,19 +622,82 @@ button.twitter:after,
 input[type=submit].twitter:after {
   background: #2c8dd0;
 }
-.store-selector {
+nav {
+  background-color: #f56a2c;
+  display: -webkit-box;
+  display: flex;
+  padding: 10px 5%;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.15);
+}
+nav h1 {
+  font-family: 'Baloo Bhaina', cursive;
+  color: #fff;
+  font-size: 30px;
+}
+.login-form {
+  font-family: Roboto, sans-serif;
+  text-align: center;
   background: #fff;
   max-width: 500px;
+  min-width: 200px;
   margin: 50px auto;
-  padding: 2rem;
-  border: 2px solid #000;
+  padding: 3.5rem 2rem;
+  border: 1px solid #1d1d1d;
+  border-radius: 5px;
 }
-.store-selector input,
-.store-selector button {
+.login-form p:first-child {
+  font-weight: bold;
+  margin: 10px auto 20px;
+}
+.login-form hr {
+  border: 1px solid #f56a2c;
+  margin-bottom: 40px;
+}
+.login-form p:nth-child(3) {
+  color: #8e8b8b;
+  margin: 20px 10px 10px;
+}
+.login-form input,
+.login-form button {
   width: 100%;
+  border-radius: 5px;
+  border: 1px solid #d3d3d3;
+  height: 35px;
+  margin: 5px auto;
 }
-.store-selector input[type="text"],
-.store-selector button[type="text"] {
-  text-align: center;
-  font-size: 3rem;
+.login-form input[type="text"],
+.login-form button[type="text"] {
+  color: #1d1d1d;
+  position: relative;
+  bottom: 5px;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 18px;
+}
+.login-form input::-webkit-input-placeholder {
+  color: #d3d3d3;
+  border-radius: 5px;
+}
+.login-form input:-ms-input-placeholder {
+  color: #d3d3d3;
+  border-radius: 5px;
+}
+.login-form input::placeholder {
+  color: #d3d3d3;
+  border-radius: 5px;
+}
+.login-form button {
+  background: #fff;
+  text-transform: none;
+  font-size: 18px;
+  color: #4183d7;
+}
+.login-form button:after {
+  background: #2772d4;
+}
+.login-form button:hover {
+  color: #fff;
+}
+.login-form button:focus {
+  color: #fff;
 }

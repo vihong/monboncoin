@@ -1,5 +1,13 @@
 // Import all partials
 @require './_*.styl'
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina|Roboto&display=swap');
+
+
+body
+  background-image url(https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)
+  background-position center top -100px
+  background-size cover
+  background-attachment fixed
 
 
 header.top
@@ -282,16 +290,67 @@ button, input[type=submit]
     &:after
       background darken(#5EA9DD, 20%)
 
+nav
+  background-color #f56a2c
+  display flex
+  padding 10px 5%
+  box-shadow 0 2px 4px 0 rgba(0,0,0,.15)
+  h1
+    font-family 'Baloo Bhaina', cursive
+    color #fff
+    font-size 30px
 
-// Store Selector
-.store-selector
-  background white
+
+
+// Login form
+.login-form
+  font-family Roboto,sans-serif
+  text-align center
+  background #fff
   max-width 500px
+  min-width 200px
   margin 50px auto
-  padding 2rem
-  border 2px solid black
+  padding 3.5rem 2rem
+  border 1px solid #1d1d1d
+  border-radius 5px
+  p:first-child
+    font-weight bold
+    margin 10px auto 20px
+  hr
+    border 1px solid #f56a2c
+    margin-bottom 40px
+  p:nth-child(3)
+    color #8e8b8b
+    margin 20px 10px 10px
   input, button
     width 100%
+    border-radius 5px
+    border 1px solid #d3d3d3
+    height 35px
+    margin 5px auto
     &[type="text"]
-      text-align center
-      font-size 3rem
+      color: #1d1d1d;
+      position relative
+      bottom 5px
+      text-align left
+      padding-left 10px
+      font-size 18px
+  input::placeholder
+    color #d3d3d3
+    border-radius 5px
+  button
+    background #fff
+    text-transform none
+    font-size 18px
+    color #4183d7
+  button:after
+    background #2772d4    
+  button:hover //essaye d'accéder au bouton via hover (sans "tab")
+    color #fff
+  button:focus //essaye d'accéder au boutton via "tab" du clavier
+    color #fff
+
+
+
+
+  

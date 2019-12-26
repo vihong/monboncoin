@@ -14,11 +14,7 @@ class LoginForm extends React.Component {
 
 	render() {
 		return (
-			<form
-				action=""
-				className="store-selector"
-				onSubmit={this.goToStore}
-			>
+			<form action="" className="login-form" onSubmit={this.goToStore}>
 				<p>Connexion</p>
 				<hr />
 				<p>Comment vous appelez-vous ?</p>
