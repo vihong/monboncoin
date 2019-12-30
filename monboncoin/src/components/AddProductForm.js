@@ -15,7 +15,8 @@ class AddProductForm extends React.Component {
 		const newProduct = {
 			name   : this.nameRef.current.value,
 			price  : parseFloat(this.priceRef.current.value),
-			status : this.statusRef.current.value,
+			//status : this.statusRef.current.value,
+			status : 'available',
 			// delivery : this.deliveryRef.current.value,
 			desc   : this.descRef.current.value,
 			image  : this.imageRef.current.value
@@ -26,46 +27,40 @@ class AddProductForm extends React.Component {
 
 	render() {
 		return (
-			<form className="fish-edit" onSubmit={this.createProduct}>
+			<form className="product-add" onSubmit={this.createProduct}>
 				<input
 					name="name"
 					ref={this.nameRef}
 					type="text"
+					required
 					placeholder="Produit"
+					maxLength="20"
 				/>
 				<input
 					name="price"
 					ref={this.priceRef}
-					type="text"
+					type="number"
 					required
 					placeholder="Prix"
+					step="0.01"
 				/>
-				<select name="status" ref={this.statusRef}>
+				{/* <select name="status" ref={this.statusRef}>
 					<option value="available">actuellement en vente</option>
 					<option value="unavailable">vendu</option>
-				</select>
-				{/* <select name="delivery" ref={this.deliveryRef}>
-					<option value="a venir chercher sur place">
-						a venir chercher sur place
-					</option>
-					<option value="échange en mains propres">
-						échange en mains propres
-					</option>
-					<option value="livraison">livraison</option>
 				</select> */}
 				<textarea
 					name="desc"
 					ref={this.descRef}
 					placeholder="Expliquez pourquoi votre produit est génial"
-					maxLength="160"
+					maxLength="200"
 				/>
 				<input
 					name="image"
 					ref={this.imageRef}
 					type="text"
-					placeholder="URL directe d'une image trouvée sur Google ou ailleurs"
+					placeholder="URL de l'image, ex: https://static.smallable.com/1028248-622x622q80/peluche-singe.jpg"
 				/>
-				<button type="submit">+ Mettre ce produit en vente</button>
+				<button type="submit">Mettre en vente</button>
 			</form>
 		);
 	}

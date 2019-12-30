@@ -4,7 +4,7 @@ import Header from './Header';
 import Sales from './Sales';
 import Inventory from './Inventory';
 import Product from './Product';
-import sampleFishes from '../sample-fishes';
+import NoProductOnlineMessage from './NoProductOnlineMessage';
 import sampleProducts from '../sample-products';
 import base from '../base';
 
@@ -31,24 +31,24 @@ class App extends React.Component {
 		});
 	}
 
-	componentWillUnmount() {
-		console.log('unmounted');
-		base.removeBinding(this.ref);
-	}
-
 	componentDidUpdate() {
 		console.log(this.state.sales);
 		localStorage.setItem(
 			this.props.match.params.dashboard,
 			JSON.stringify(this.state.sales)
 		);
-		console.log('UPDATED');
+		console.log('updated');
+	}
+
+	componentWillUnmount() {
+		console.log('unmounted');
+		base.removeBinding(this.ref);
 	}
 
 	// BEHAVIOUR BOX
-	addProductToState = (product) => {
+	addProductToState = (newProduct) => {
 		const products = { ...this.state.products };
-		products[`product${Date.now()}`] = product;
+		products[`product${Date.now()}`] = newProduct;
 		this.setState({ products });
 	};
 
@@ -58,8 +58,8 @@ class App extends React.Component {
 
 	addSaleToState = (key) => {
 		const sales = { ...this.state.sales };
-		// sales[key] = sales[key] + 1 || 1; //add new sale or update quantity sold in existing sale
-		sales[key] = 1; //add new sale or update quantity sold in existing sale
+		// sales[key] = sales[key] + 1 || 1; //add new sale or update quantity unavailable in existing sale
+		sales[key] = 1; //add new sale or update quantity unavailable in existing sale
 		this.setState({ sales });
 	};
 
@@ -82,12 +82,26 @@ class App extends React.Component {
 
 	deleteSaleState = (key) => {
 		const sales = { ...this.state.sales };
+		const products = { ...this.state.products };
 		delete sales[key];
-		this.setState({ sales });
+		products[key].status = 'available';
+		this.setState({ products, sales });
+	};
+
+	deleteAllProducts = () => {
+		this.setState({ products: null, sales: {} });
+	};
+
+	changeStatus = (key) => {
+		const products = { ...this.state.products };
+		products[key].status = 'unavailable';
+		this.setState({ products });
 	};
 
 	// RENDER BOX
 	render() {
+		const productsArray = Object.keys(this.state.products);
+
 		const productComponents = Object.keys(
 			this.state.products
 		).map((key) => (
@@ -96,15 +110,23 @@ class App extends React.Component {
 				index={key}
 				details={this.state.products[key]}
 				addSaleToState={this.addSaleToState}
+				changeStatus={this.changeStatus}
 			/>
 		));
+		const accountName = this.props.match.params.dashboard;
 		return (
 			<Fragment>
-				<Navbar />
+				<Navbar accountName={accountName} />
 				<div className="catch-of-the-day">
 					<div className="menu">
 						<Header />
-						<ul className="fishes">{productComponents}</ul>
+						<ul className="fishes">
+							{productsArray.length === 0 ? (
+								<NoProductOnlineMessage />
+							) : (
+								productComponents
+							)}
+						</ul>
 					</div>
 					<Sales
 						products={this.state.products}
@@ -117,6 +139,7 @@ class App extends React.Component {
 						products={this.state.products}
 						updateProductState={this.updateProductState}
 						deleteProductState={this.deleteProductState}
+						deleteAllProducts={this.deleteAllProducts}
 					/>
 				</div>
 			</Fragment>

@@ -1,6 +1,7 @@
 // Import all partials
 @require './_*.styl'
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Courgette|Dancing+Script|Kalam|Kaushan+Script|Satisfy|Shadows+Into+Light&display=swap');
 
 
 body
@@ -17,26 +18,32 @@ header.top
     line-height 0.7 // this font has a wacky baseline
     display flex
     justify-content: center;
-
   h2
     font-weight: bold
 
 .catch-of-the-day
   display flex
-  height 90vh
+  //height 90vh
   max-width:1500px
   margin 0 auto
   margin-top 5vh
   perspective: 1000px;
   transform-style preserve-3d
+  //background snow
+  box-shadow 0 2px 6px 0 hsla(0, 0%, 0%, 0.2)
   & > *
     flex 1 4 auto
     padding 2rem
-    border 1rem double lighten(black,10%)
+    //border 1rem double lighten(black,10%)
+    border-top 5px solid transparent
+    border-radius 5px
+    padding 3rem 2rem
+    margin 2rem 1rem
     position relative
     background white
     transition all 0.3s
-    box-shadow 0 5px 5px rgba(0,0,0,0.1)
+    //box-shadow 0 5px 5px rgba(0,0,0,0.1)
+    box-shadow 0 2px 6px 0 hsla(0, 0%, 0%, 0.2)
     overflow scroll
     &:first-child
       flex-shrink 1 // take 4x the extra room
@@ -51,6 +58,8 @@ header.top
       flex-shrink 1 // take 4x the extra room
       flex-basis 50%
       transform translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px)
+  & > *:hover
+    border-top 5px solid orange
 
 // Folding Transforms
 // Take off folding when not checked
@@ -72,21 +81,20 @@ ul
 ul.order
   // Default state
   li
-    border-bottom 1px solid black
-    padding 2rem 0
+    padding 1.5rem 0
     display flex
     font-size 1.4rem
     justify-content space-between
     align-items center
-    &:hover
-      // padding 1rem 0
+    span 
       button
-        display inline
-    button
-      border 0
-      display none
-      line-height 1
-      padding 0
+        border 0
+        line-height 1
+        padding 0 5px 0 0 
+        position absolute
+        right 3px
+        color lighten(red, 40%)
+      
     &.unavailable
       text-decoration line-through
       background lighten(red, 80%)
@@ -99,45 +107,94 @@ ul.order
       span
         display inline-block
         // transition all 0.5s
+    &:hover
+        button
+          color red
+          transform scale(1.3)
 .total
   padding 2rem 0
   font-size 1.4rem
-  border-bottom 3px solid black
-  border-top 3px double black
+  border-top 3px solid black
   & strong
     float: right
 
 .order-title
   text-align center
 
-.fish-edit
+.product-edit, .product-add
+  background snow
   margin-bottom 20px
-  border 2px solid black
+  border-radius 5px
+  //border 1px solid black
+  box-shadow 0 2px 6px 0 hsla(0, 0%, 0%, 0.2)
   overflow hidden
   display flex
   flex-wrap wrap
-  input, textarea, select
-    width 33.33%
-    padding 10px
+  padding-top 10px
+  input, select
+    width 45%
+    padding 5px
     line-height 1
     font-size 1.2rem
     border 0
-    border-bottom 1px solid black
-    border-right 1px solid black
+    //box-shadow 0 2px 6px 0 hsla(0, 0%, 0%, 0.2)
     appearance none
     border-radius 0
     background white
+    //border 1px solid red
+    margin auto
+    text-overflow:ellipsis
+    border-radius 5px
     &:focus
       outline 0
+      background white
   textarea
-    width 100%
+    width 95%
+    resize none
+    background white
+    //border 1px solid red
+    margin 5px auto
+    padding 5px
+    font-size 1.2rem
+    border none
+    text-overflow:ellipsis
+    border-radius 5px
+
+
   input:last-of-type
-    width 100%
+    width 95%
+    margin auto
+    padding 5px
+
+
   button
+    color #44bd32
     width 100%
+    margin-top 5px
     border 0
+    padding 0.5rem
+    font-size 1.3rem
+    text-transform none
+    //border-top 1px solid lightgrey
+  button:hover, button:after
+    background #44bd32
+    color #fff
+  input::placeholder
+    background white
+    height 35px
+    margin 2px
+  
 
 
+.product-edit
+  button
+    color #EA2027
+  button:hover, button:after
+    background #EA2027
+  input::placeholder
+    background snow
+    height 35px
+  
 // Menu Styles
 .list-of-fish
   border-top 2px solid black
@@ -146,34 +203,92 @@ ul.order
   margin-top 2rem
   transform translateZ(0);
 
+
+//Ads online
 .ad-online
-  border-bottom 2px solid black
-  border-top 1px solid black
-  padding-bottom 2rem
-  padding-top 2rem
-  margin-bottom 5px
+  padding 2rem
+  margin-bottom 20px
   clear both
   overflow hidden
+  box-shadow 0 2px 6px 0 hsla(0, 0%, 0%, 0.2)
+  border-radius 5px
+  border-left 5px solid transparent
+  transition all 0.2s ease
+  display flex
+  background snow
+  &:hover
+    transform scale(1.02)
+
+.product-image
+  img
+    float left
+    width 150px
+    max-height 160px
+    margin-right 1.5rem
+    object-fit cover
+
+.product-text
   h3
     font-size 1.9rem
     font-weight bold
   p
-    margin 0
-    font-size 1.6rem
-  .fish-name
+    margin 5px 0
+    font-size 1.3rem
+    font-weight 400
+    line-height 130%
+  .product-name
     margin 0
     display flex
     justify-content space-between
     align-items center
   .price
-    font-size 1.6rem
+    font-size 1.4rem
+    font-weight bold
     color #f56a2c
     justify-content flex-end
     // font-family 'Open Sans Condensed'
-  img
-    float left
-    width 150px
-    margin-right 1rem
+  
+  button
+    padding 5px 10px
+    margin-top 5px
+    border-radius 5px
+    border 1px solid #44bd32
+    color green
+    font-size 1.2rem
+    position relative
+    right 2px
+  button:hover
+    color snow
+    background #44bd32
+  button:after
+    background #44bd32
+
+
+.ad-online:hover,
+  //background whitesmoke
+  border-left 5px solid #f56a2c
+
+.no-product-online
+  display flex
+  justify-content center
+  align-items center
+  font-style italic
+  position relative
+  top 30px
+  p
+    width 70%
+    font-size 1.5rem
+    text-align center
+    color darken(lightgrey, 50%)
+    font-weight bold
+    span
+      position relative
+      top 10px
+      line-height 150%
+      color darken(lightgrey, 30%)
+      font-weight normal
+
+
 
 button, input[type=submit]
   text-transform uppercase
@@ -193,13 +308,14 @@ button, input[type=submit]
     &:hover
       color red
       cursor not-allowed
+      background white
     &:after
       display none
   &:after
     content ''
     z-index -1
     display block
-    background black
+    //background black
     position absolute
     width 100%
     height 0
@@ -207,7 +323,7 @@ button, input[type=submit]
     top 0
     transition all 0.2s
   &:hover, &:focus
-    color white
+    //color white
     outline 0
     &:after
       height 100%
@@ -245,15 +361,44 @@ button, input[type=submit]
 nav
   background-color #f56a2c
   display flex
+  justify-content space-between
   padding 10px 5%
   box-shadow 0 2px 4px 0 rgba(0,0,0,.15)
+  position sticky
+  top 0px
+  z-index 1
   h1
     font-family 'Baloo Bhaina', cursive
     color #fff
     font-size 30px
+    display block
+    position relative //for vihong signature
     a
       text-decoration none
       color #fff
+    span
+      color #1d1d1d
+      font-size 15px
+      position absolute
+      left 1%
+      bottom 0px
+      //font-family: 'Caveat', cursive;
+      font-family: 'Satisfy', cursive;
+      //font-family: 'Kalam', cursive;
+    
+
+.account
+  display flex
+  flex-direction column
+  align-items center
+  text-align center
+  width 50px
+  img
+    margin-bottom 1px
+  p
+    display inline
+    font-size 12px
+    margin 0
 
 
 
@@ -266,13 +411,13 @@ nav
   min-width 200px
   margin 50px auto
   padding 3.5rem 2rem
-  border 1px solid #1d1d1d
+  box-shadow 0 2px 6px 0 hsla(0, 0%, 0%, 0.2)
   border-radius 5px
   p:first-child
     font-weight bold
     margin 10px auto 20px
   hr
-    border 1px solid #f56a2c
+    border 1.5px solid #f56a2c
     margin-bottom 40px
   p:nth-child(3)
     color #8e8b8b
@@ -283,6 +428,7 @@ nav
     border 1px solid #d3d3d3
     height 35px
     margin 5px auto
+    background snow
     &[type="text"]
       color: #1d1d1d;
       position relative
@@ -292,6 +438,7 @@ nav
       font-size 18px
   input::placeholder
     border-radius 5px
+    color lightgrey
   button
     background #fff
     text-transform none
@@ -306,5 +453,50 @@ nav
 
 
 
+.inventory
+  h2
+    font-weight bold
+  .demo-button
+    margin-bottom 2rem
+    border-radius 5px
+    padding 0.8rem 1rem
+    font-size 1rem
+    background #1d1d1d
+    color snow
+    display inline
+    margin 12px
+    height 35px
+    margin-bottom 15px
+  .demo-button:hover
+    background snow
+    color #1d1d1d
+  //.demo-button:focus
+  //  color #1d1d1d
+  //  background white
+  .demo-button:after
+    color snow
 
-  
+.inventory
+  .deleteAll-button
+    background red
+    border none
+  hr
+    border 0.5px solid lightgrey
+    margin 20px
+
+.order-wrap
+  h2
+    font-weight bold
+
+
+.top.top-header
+  h2
+    position relative
+  i
+    color red
+    position absolute
+    right 10%
+    top 20%
+    font-size 2rem
+  i:hover
+    transform: rotate(90deg)

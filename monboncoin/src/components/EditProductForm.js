@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatPrice } from '../helpers';
 
 class EditProductForm extends React.Component {
 	// BEHAVIOUR BOX
@@ -21,47 +22,42 @@ class EditProductForm extends React.Component {
 	render() {
 		// console.log(this.props.product);
 		return (
-			<div className="fish-edit">
+			<div className="product-edit">
 				<input
 					name="name"
 					onChange={this.handleChange}
 					value={this.props.product.name}
 					ref={this.nameRef}
 					type="text"
+					required
 					placeholder="Produit"
+					maxLength="35"
 				/>
 				<input
 					name="price"
 					onChange={this.handleChange}
 					value={this.props.product.price}
+					required
 					ref={this.priceRef}
 					type="text"
 					placeholder="Prix"
 				/>
-				<select
+				{/* <select
 					name="status"
 					ref={this.statusRef}
 					onChange={this.handleChange}
 					value={this.props.product.status}
 				>
 					<option value="available">actuellement en vente</option>
-					<option value="unavailable">vendu</option>
-				</select>
-				{/* <select name="delivery" ref={this.deliveryRef}>
-            <option value="a venir chercher sur place">
-                a venir chercher sur place
-            </option>
-            <option value="échange en mains propres">
-                échange en mains propres
-            </option>
-            <option value="livraison">livraison</option>
-        </select> */}
+					<option value="unavailable">retirer de la vente</option>
+				</select> */}
 				<textarea
 					name="desc"
 					onChange={this.handleChange}
 					value={this.props.product.desc}
 					ref={this.descRef}
 					placeholder="Expliquez pourquoi votre produit est génial"
+					maxLength="160"
 				/>
 				<input
 					name="image"
@@ -69,10 +65,10 @@ class EditProductForm extends React.Component {
 					onChange={this.handleChange}
 					value={this.props.product.image}
 					type="text"
-					placeholder="URL directe d'une image trouvée sur Google ou ailleurs"
+					placeholder="URL de l'image, ex: https://static.smallable.com/1028248-622x622q80/peluche-singe.jpg"
 				/>
 				<button onClick={this.handleDelete}>
-					+ Supprimer ce produit de vos annonces
+					Supprimer de vos annonces
 				</button>
 			</div>
 		);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import AddProductForm from './AddProductForm';
 import EditProductForm from './EditProductForm';
 
@@ -16,15 +16,30 @@ class Inventory extends React.Component {
 				deleteProductState={this.props.deleteProductState}
 			/>
 		));
+
+		const productsArray = Object.keys(this.props.products);
+
 		return (
 			<div className="inventory">
-				<h2>Qu'avez-vous à vendre ?</h2>
+				<h2>Inventaire</h2>
+				<div className="buttons">
+					<button
+						className="demo-button"
+						onClick={this.props.loadSampleProducts}
+					>
+						Générer de fausses annonces &#128176;
+					</button>
+					<button
+						className="demo-button deleteAll-button"
+						onClick={this.props.deleteAllProducts}
+					>
+						Supprimer toutes les annonces &#10008;
+					</button>
+				</div>
 				<AddProductForm
 					addProductToState={this.props.addProductToState}
 				/>
-				<button onClick={this.props.loadSampleProducts}>
-					Tester Démo
-				</button>
+				{productsArray.length === 0 ? null : <hr />}
 				<ul>{EditFormComponents}</ul>
 			</div>
 		);
