@@ -5,7 +5,7 @@ const products = {
 		image  :
 			'https://dyw7ncnq1en5l.cloudfront.net/optim/produits/124/41235/bose-soundsport-free_24c5c9526b0df651__450_400.png',
 		desc   :
-			"Je les ai chourav à quelqu'un mais sur la vie de mon chat ils sont trop bien, et j'ai besoin de thune. J'ai jamais testé mais jvous jure trop bon son",
+			"Je les ai chourav à quelqu'un mais sur la vie de mon chat ils sont trop bien, et j'ai besoin de thune.",
 		price  : 150,
 		status : 'available'
 	},
@@ -14,7 +14,7 @@ const products = {
 		image  :
 			'https://www.aprilparis.com/wp-content/uploads/2017/08/Bague-de-fiancailles-diamant-ethique-DANA-or-rose-equitable.jpg',
 		desc   :
-			"Mon copain m'a trompée le jour après m'avoir demandée en mariage. Je vends donc la bague de fiançaille qu'il m'a offerte. Bague portée à peine 24 heures",
+			"Mon copain m'a trompée le jour après m'avoir demandée en mariage. Je vends donc la bague de fiançaille qu'il m'a offerte.",
 		price  : 1000,
 		status : 'available'
 	},
@@ -62,25 +62,25 @@ const products = {
 		image  :
 			'https://img3.leboncoin.fr/ad-image/55303bcf87a015f33c9622c6ed6daebb7c630ba7.jpg',
 		desc   :
-			'Très efficaces en soirée pour les mecs (séduire) et contre les mecs (conseil : viser le tibia)',
+			'Très efficaces en soirée "pour" les mecs (séduire) et "contre" les mecs (conseil : visez le tibia les filles)',
 		price  : 50,
 		status : 'available'
 	},
 	product8 : {
-		name   : 'MacBook Pro RETINA 2019 NEUF',
+		name   : 'MacBook Pro RETINA 2019 quasi-NEUF',
 		image  :
 			'https://img0.leboncoin.fr/ad-image/b85f93b5a94313db9049c5961f2764083f979493.jpg',
 		desc   :
-			'Big, sweet and tender. True dry-pack scallops from the icey waters of Alaska. About 8-10 per pound',
+			"Je fourni avec le chargeur officiel, une housse de protection, facture d'achat.",
 		price  : 1250,
 		status : 'available'
 	},
 	product9 : {
-		name   : 'Portefeuille Louis Vuitton',
+		name   : 'Portefeuille Louis Vuitton Homme',
 		image  :
 			'https://www.bijouxoccasions.com/31370-large_default/portefeuille-louis-vuitton-multiple-en-toile-monogram-.jpg',
 		desc   :
-			'With 21-25 two bite prawns in each pound, these sweet morsels are perfect for shish-kabobs.',
+			"Véritable porte feuille homme Louis Vuitton. Ce n'est pas une copie. Très bon état",
 		price  : 400,
 		status : 'available'
 	}

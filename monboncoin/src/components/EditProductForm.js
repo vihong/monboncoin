@@ -65,7 +65,7 @@ class EditProductForm extends React.Component {
 					onChange={this.handleChange}
 					value={this.props.product.image}
 					type="text"
-					placeholder="URL de l'image, ex: https://static.smallable.com/1028248-622x622q80/peluche-singe.jpg"
+					placeholder="URL de l'image"
 				/>
 				<button onClick={this.handleDelete}>
 					Supprimer de vos annonces

@@ -51,14 +51,14 @@
           transform: translateY(-100%) scale(3);
 }
 @font-face {
-  font-family: "  font-family Roboto,sans-serif";
+  font-family: "font-family Roboto,sans-serif";
   src: url("./fonts/haymaker-webfont.eot");
   src: url("./fonts/haymaker-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/haymaker-webfont.woff") format("woff"), url("./fonts/haymaker-webfont.ttf") format("truetype"), url("./fonts/haymaker-webfont.svg#haymakerregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'blanchcaps_inline';
+  font-family: 'font-family Roboto,sans-serif';
   src: url("./fonts/blanch_caps_inline-webfont.eot");
   src: url("./fonts/blanch_caps_inline-webfont.eot?#iefix") format('embedded-opentype'), url("./fonts/blanch_caps_inline-webfont.woff") format('woff'), url("./fonts/blanch_caps_inline-webfont.ttf") format('truetype'), url("./fonts/blanch_caps_inline-webfont.svg#blanchcaps_inline") format('svg');
   font-weight: normal;
@@ -257,12 +257,13 @@ h3 {
   font-size: 3rem;
 }
 @import url("https://fonts.googleapis.com/css?family=Baloo+Bhaina|Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Courgette|Dancing+Script|Kalam|Kaushan+Script|Satisfy|Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Satisfy&display=swap");
 body {
   background-image: url("https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
-  background-position: center top -100px;
+  background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  height: 100vh;
 }
 header.top {
   text-align: center;
@@ -281,6 +282,7 @@ header.top h2 {
 .catch-of-the-day {
   display: -webkit-box;
   display: flex;
+  height: 80vh;
   max-width: 1500px;
   margin: 0 auto;
   margin-top: 5vh;
@@ -288,7 +290,6 @@ header.top h2 {
           perspective: 1000px;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
 }
 .catch-of-the-day > * {
   -webkit-box-flex: 1;
@@ -304,6 +305,7 @@ header.top h2 {
   transition: all 0.3s;
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
   overflow: scroll;
+  overflow-x: hidden;
 }
 .catch-of-the-day > *:first-child {
   flex-shrink: 1;
@@ -394,7 +396,7 @@ ul.order li:hover button {
 }
 .product-edit,
 .product-add {
-  background: #fffafa;
+  background: #fff;
   margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
@@ -417,7 +419,7 @@ ul.order li:hover button {
      -moz-appearance: none;
           appearance: none;
   border-radius: 0;
-  background: #fff;
+  background: #fffafa;
   margin: auto;
   text-overflow: ellipsis;
   border-radius: 5px;
@@ -427,13 +429,13 @@ ul.order li:hover button {
 .product-edit select:focus,
 .product-add select:focus {
   outline: 0;
-  background: #fff;
+  background: #fffafa;
 }
 .product-edit textarea,
 .product-add textarea {
   width: 95%;
   resize: none;
-  background: #fff;
+  background: #fffafa;
   margin: 5px auto;
   padding: 5px;
   font-size: 1.2rem;
@@ -466,21 +468,44 @@ ul.order li:hover button {
 }
 .product-edit input::-webkit-input-placeholder,
 .product-add input::-webkit-input-placeholder {
-  background: #fff;
+  background: #fffafa;
   height: 35px;
   margin: 2px;
 }
 .product-edit input:-ms-input-placeholder,
 .product-add input:-ms-input-placeholder {
-  background: #fff;
+  background: #fffafa;
   height: 35px;
   margin: 2px;
 }
 .product-edit input::placeholder,
 .product-add input::placeholder {
-  background: #fff;
+  background: #fffafa;
   height: 35px;
   margin: 2px;
+}
+.product-add input,
+.product-add textarea {
+  background: #f8fdf4;
+  box-shadow: 0 1px 6px 0 rgba(20,20,20,0.09);
+}
+.product-add input::-webkit-input-placeholder {
+  background: #f8fdf4;
+}
+.product-add input:-ms-input-placeholder {
+  background: #f8fdf4;
+}
+.product-add input::placeholder {
+  background: #f8fdf4;
+}
+.edit-form-title {
+  font-size: 12px;
+  padding-left: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+.edit-form-title span {
+  text-decoration: underline;
 }
 .product-edit button {
   color: #ea2027;
@@ -521,7 +546,7 @@ ul.order li:hover button {
   transition: all 0.2s ease;
   display: -webkit-box;
   display: flex;
-  background: #fffafa;
+  background: #fff;
 }
 .ad-online:hover {
   -webkit-transform: scale(1.02);
@@ -725,6 +750,7 @@ nav h1 {
   font-size: 30px;
   display: block;
   position: relative;
+  cursor: default;
 }
 nav h1 a {
   text-decoration: none;
@@ -757,13 +783,44 @@ nav h1 span {
   font-size: 12px;
   margin: 0;
 }
+.not-found h1 {
+  font-family: "Mountains of Christmas", cursive;
+  font-size: 70px;
+  text-align: center;
+  margin-top: 10%;
+  color: #208820;
+}
+.not-found button {
+  display: -webkit-box;
+  display: flex;
+  margin: auto;
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+  border-radius: 5px;
+  padding: 5px 15px;
+  border: 1px solid #4183d7;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+}
+.not-found button:hover {
+  background: #4183d7;
+  color: #fff;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+.not-found button:hover a {
+  color: #fff;
+}
+.not-found button a {
+  text-decoration: none;
+  color: #4183d7;
+}
 .login-form {
   font-family: Roboto, sans-serif;
   text-align: center;
   background: #fff;
   max-width: 500px;
   min-width: 200px;
-  margin: 50px auto;
+  margin: 30px auto;
   padding: 3.5rem 2rem;
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -816,29 +873,43 @@ nav h1 span {
   font-size: 18px;
   color: #4183d7;
 }
-.login-form button:after {
-  background: #2772d4;
-}
 .login-form button:hover {
   color: #fff;
+  background: #2772d4;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
 }
 .login-form button:focus {
   color: #fff;
+}
+.tagline h1 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 60px auto 20px;
+  color: #f56a2c;
+}
+.account-name {
+  font-weight: bold;
+  cursor: default;
+}
+.buttons {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
 }
 .inventory h2 {
   font-weight: bold;
 }
 .inventory .demo-button {
-  margin-bottom: 2rem;
   border-radius: 5px;
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 5px;
   font-size: 1rem;
   background: #1d1d1d;
   color: #fffafa;
   display: inline;
-  margin: 12px;
   height: 35px;
-  margin-bottom: 15px;
+  margin: 0 auto 15px;
 }
 .inventory .demo-button:hover {
   background: #fffafa;
@@ -849,7 +920,11 @@ nav h1 span {
 }
 .inventory .deleteAll-button {
   background: #d12028;
-  border: none;
+  border: 1px solid #d12028;
+}
+.inventory .deleteAll-button:hover {
+  border: 1px solid #d12028;
+  color: #d12028;
 }
 .inventory hr {
   border: 0.5px solid #d3d3d3;

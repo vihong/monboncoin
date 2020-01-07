@@ -27,19 +27,26 @@ class Inventory extends React.Component {
 						className="demo-button"
 						onClick={this.props.loadSampleProducts}
 					>
-						Générer de fausses annonces &#128176;
+						Générer de fausses annonces <span>&#128176;</span>
 					</button>
 					<button
 						className="demo-button deleteAll-button"
 						onClick={this.props.deleteAllProducts}
 					>
-						Supprimer toutes les annonces &#10008;
+						Supprimer toutes les annonces <span>&#10008;</span>
 					</button>
 				</div>
 				<AddProductForm
 					addProductToState={this.props.addProductToState}
 				/>
-				{productsArray.length === 0 ? null : <hr />}
+				{productsArray.length === 0 ? null : (
+					<Fragment>
+						<hr />
+						<p className="edit-form-title">
+							Editez vos annonces <span>en live</span>
+						</p>
+					</Fragment>
+				)}
 				<ul>{EditFormComponents}</ul>
 			</div>
 		);

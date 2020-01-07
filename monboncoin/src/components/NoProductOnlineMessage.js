@@ -7,7 +7,7 @@ const NoProductOnlineMessage = () => {
 				Vous n'avez rien à vendre pour l'instant.
 				<br />
 				<span>
-					👉Utilisez le panel "Inventaire" pour mettre en vente un
+					👉 Utilisez le panel "Inventaire" pour mettre en vente un
 					produit ou cliquez sur "Générer de fausses annonces"...
 				</span>
 			</p>

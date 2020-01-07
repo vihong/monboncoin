@@ -1,14 +1,16 @@
 // Import all partials
 @require './_*.styl'
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina|Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Courgette|Dancing+Script|Kalam|Kaushan+Script|Satisfy|Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+
 
 
 body
   background-image url(https://images.pexels.com/photos/1303098/pexels-photo-1303098.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)
-  background-position center top -100px
+  background-position center 
   background-size cover
   background-attachment fixed
+  height 100vh
 
 
 header.top
@@ -23,14 +25,14 @@ header.top
 
 .catch-of-the-day
   display flex
-  //height 90vh
+  height 80vh
   max-width:1500px
   margin 0 auto
   margin-top 5vh
   perspective: 1000px;
   transform-style preserve-3d
   //background snow
-  box-shadow 0 2px 6px 0 hsla(0, 0%, 0%, 0.2)
+  //box-shadow 0 2px 6px 0 hsla(0, 0%, 0%, 0.2)
   & > *
     flex 1 4 auto
     padding 2rem
@@ -45,6 +47,7 @@ header.top
     //box-shadow 0 5px 5px rgba(0,0,0,0.1)
     box-shadow 0 2px 6px 0 hsla(0, 0%, 0%, 0.2)
     overflow scroll
+    overflow-x : hidden
     &:first-child
       flex-shrink 1 // take 4x the extra room
       flex-basis 50%
@@ -54,6 +57,7 @@ header.top
       border-left 0
       border-right 0
       min-width 300px
+      //overflow-y : auto
     &:last-child
       flex-shrink 1 // take 4x the extra room
       flex-basis 50%
@@ -122,7 +126,7 @@ ul.order
   text-align center
 
 .product-edit, .product-add
-  background snow
+  background white
   margin-bottom 20px
   border-radius 5px
   //border 1px solid black
@@ -140,18 +144,18 @@ ul.order
     //box-shadow 0 2px 6px 0 hsla(0, 0%, 0%, 0.2)
     appearance none
     border-radius 0
-    background white
+    background snow
     //border 1px solid red
     margin auto
     text-overflow:ellipsis
     border-radius 5px
     &:focus
       outline 0
-      background white
+      background snow
   textarea
     width 95%
     resize none
-    background white
+    background snow
     //border 1px solid red
     margin 5px auto
     padding 5px
@@ -180,12 +184,27 @@ ul.order
     background #44bd32
     color #fff
   input::placeholder
-    background white
+    background snow
     height 35px
     margin 2px
   
+.product-add
+  input, textarea
+    background lighten(#b8e994, 90%)
+    box-shadow: 0 1px 6px 0 rgba(20, 20, 20, 0.09)
+  input::placeholder
+    background lighten(#b8e994, 90%)
+    
 
 
+.edit-form-title
+  font-size 12px
+  padding-left 5px
+  font-weight bold
+  text-align center
+  span
+    text-decoration underline
+  
 .product-edit
   button
     color #EA2027
@@ -215,7 +234,7 @@ ul.order
   border-left 5px solid transparent
   transition all 0.2s ease
   display flex
-  background snow
+  background white
   &:hover
     transform scale(1.02)
 
@@ -373,6 +392,7 @@ nav
     font-size 30px
     display block
     position relative //for vihong signature
+    cursor default
     a
       text-decoration none
       color #fff
@@ -401,6 +421,34 @@ nav
     margin 0
 
 
+// NotFound
+.not-found
+  h1
+    font-family : "Mountains of Christmas", cursive
+    font-size   : 70px
+    text-align  : center
+    margin-top  : 10%
+    color      : darken(green, 30%)
+  button
+    display      : flex
+    margin       : auto
+    background   : #fff
+    font-family   : "Roboto", sans-serif
+    border-radius : 5px
+    padding 5px 15px
+    border 1px solid #4183d7
+    box-shadow 0 2px 6px 0 hsla(0, 0%, 0%, 0.2)
+    &:hover
+      background #4183d7
+      color white
+      transition all ease 0.5s
+      a
+        color #fff
+    a
+      text-decoration none
+      color #4183d7
+
+
 
 // Login form
 .login-form
@@ -409,7 +457,7 @@ nav
   background #fff
   max-width 500px
   min-width 200px
-  margin 50px auto
+  margin 30px auto
   padding 3.5rem 2rem
   box-shadow 0 2px 6px 0 hsla(0, 0%, 0%, 0.2)
   border-radius 5px
@@ -444,42 +492,55 @@ nav
     text-transform none
     font-size 18px
     color #4183d7
-  button:after
-    background #2772d4    
   button:hover //essaye d'accéder au bouton via hover (sans "tab")
     color #fff
+    background #2772d4    
+    transition all ease 0.5s
+
   button:focus //essaye d'accéder au boutton via "tab" du clavier
     color #fff
 
+.tagline
+  h1
+    // border 1px solid black
+    font-size 25px
+    font-weight: bold
+    margin 60px auto 20px
+    color #f56a2c
 
+.account-name
+  font-weight bold
+  cursor default
+
+.buttons
+  display flex
+  justify-content space-between
 
 .inventory
   h2
     font-weight bold
   .demo-button
-    margin-bottom 2rem
     border-radius 5px
-    padding 0.8rem 1rem
+    padding 0.8rem 5px
     font-size 1rem
     background #1d1d1d
     color snow
     display inline
-    margin 12px
     height 35px
-    margin-bottom 15px
+    margin 0 auto 15px
   .demo-button:hover
     background snow
     color #1d1d1d
-  //.demo-button:focus
-  //  color #1d1d1d
-  //  background white
   .demo-button:after
     color snow
 
 .inventory
   .deleteAll-button
     background red
-    border none
+    border 1px solid red
+    &:hover
+      border 1px solid red
+      color red
   hr
     border 0.5px solid lightgrey
     margin 20px

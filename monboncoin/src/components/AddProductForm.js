@@ -33,7 +33,7 @@ class AddProductForm extends React.Component {
 					ref={this.nameRef}
 					type="text"
 					required
-					placeholder="Produit"
+					placeholder="&#128083; Produit"
 					maxLength="20"
 				/>
 				<input
@@ -51,14 +51,15 @@ class AddProductForm extends React.Component {
 				<textarea
 					name="desc"
 					ref={this.descRef}
-					placeholder="Expliquez pourquoi votre produit est génial"
+					placeholder="&#9997; Expliquez pourquoi votre produit est génial"
 					maxLength="200"
 				/>
 				<input
 					name="image"
 					ref={this.imageRef}
 					type="text"
-					placeholder="URL de l'image, ex: https://static.smallable.com/1028248-622x622q80/peluche-singe.jpg"
+					placeholder="&#128248; URL de l'image"
+					accept="image/*"
 				/>
 				<button type="submit">Mettre en vente</button>
 			</form>

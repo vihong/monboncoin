@@ -10,12 +10,14 @@ class Navbar extends React.Component {
 					<span>par Vi Hong.</span>
 				</h1>
 				<div className="account">
-					<img
-						src="https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/19339625881548233621-256.png"
-						alt=""
-						width="80%"
-					/>
-					<p>{this.props.accountName}</p>
+					{this.props.accountName ? (
+						<img
+							src="https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/19339625881548233621-256.png"
+							alt=""
+							width="80%"
+						/>
+					) : null}
+					<p className="account-name">{this.props.accountName}</p>
 				</div>
 			</nav>
 		);
