@@ -117,10 +117,10 @@ class App extends React.Component {
 		return (
 			<Fragment>
 				<Navbar accountName={accountName} />
-				<div className="catch-of-the-day">
-					<div className="menu">
-						<Header tagline={true} />
-						<ul className="fishes">
+				<div className="monboncoin-panels">
+					<div>
+						<Header />
+						<ul>
 							{productsArray.length === 0 ? (
 								<NoProductOnlineMessage />
 							) : (

@@ -1,7 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class AddProductForm extends React.Component {
-	state = {};
+	static propTypes = {
+		addProductToState : PropTypes.func
+	};
 
 	nameRef = React.createRef();
 	priceRef = React.createRef();
@@ -44,10 +47,6 @@ class AddProductForm extends React.Component {
 					placeholder="Prix"
 					step="0.01"
 				/>
-				{/* <select name="status" ref={this.statusRef}>
-					<option value="available">actuellement en vente</option>
-					<option value="unavailable">vendu</option>
-				</select> */}
 				<textarea
 					name="desc"
 					ref={this.descRef}

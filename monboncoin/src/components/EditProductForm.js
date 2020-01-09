@@ -1,8 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { formatPrice } from '../helpers';
 
 class EditProductForm extends React.Component {
-	// BEHAVIOUR BOX
+	static propTypes = {
+		product            : PropTypes.shape({
+			name   : PropTypes.string,
+			price  : PropTypes.number,
+			status : PropTypes.string,
+			desc   : PropTypes.string,
+			image  : PropTypes.string
+		}),
+		updateProductState : PropTypes.func,
+		index              : PropTypes.string,
+		deleteProductState : PropTypes.func
+	};
+
 	handleChange = (event) => {
 		const updatedProduct = {
 			...this.props.product,
@@ -18,7 +31,6 @@ class EditProductForm extends React.Component {
 		this.props.deleteProductState(this.props.index);
 	};
 
-	// RENDER BOX
 	render() {
 		// console.log(this.props.product);
 		return (
@@ -42,15 +54,6 @@ class EditProductForm extends React.Component {
 					type="text"
 					placeholder="Prix"
 				/>
-				{/* <select
-					name="status"
-					ref={this.statusRef}
-					onChange={this.handleChange}
-					value={this.props.product.status}
-				>
-					<option value="available">actuellement en vente</option>
-					<option value="unavailable">retirer de la vente</option>
-				</select> */}
 				<textarea
 					name="desc"
 					onChange={this.handleChange}

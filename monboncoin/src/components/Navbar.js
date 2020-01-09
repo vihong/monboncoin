@@ -1,7 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Navbar extends React.Component {
-	state = {};
+	static propTypes = {
+		accountName : PropTypes.string
+	};
+
 	render() {
 		return (
 			<nav>
