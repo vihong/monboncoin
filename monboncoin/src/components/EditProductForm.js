@@ -36,7 +36,7 @@ class EditProductForm extends React.Component {
 				<input
 					name="price"
 					onChange={this.handleChange}
-					value={this.props.product.price}
+					value={formatPrice(this.props.product.price)}
 					required
 					ref={this.priceRef}
 					type="text"

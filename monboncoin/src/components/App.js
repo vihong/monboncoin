@@ -119,7 +119,7 @@ class App extends React.Component {
 				<Navbar accountName={accountName} />
 				<div className="catch-of-the-day">
 					<div className="menu">
-						<Header />
+						<Header tagline={true} />
 						<ul className="fishes">
 							{productsArray.length === 0 ? (
 								<NoProductOnlineMessage />
