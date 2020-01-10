@@ -68,3 +68,45 @@ class Sales extends React.Component {
 }
 
 export default Sales;
+
+/*
+renderSales = (key) => {
+	const product = this.props.products[key];
+	const quantity = this.props.sales[key];
+	// const salesNewlyMade = quantity * product.price;
+	const isAvailable = product && product.status === 'available';
+	if (!product) return null;
+	// if (isAvailable) {
+	// 	return (
+	// 		<CSSTransition
+	// 			classNames="order"
+	// 			key={key}
+	// 			timeout={{ enter: 250, exit: 250 }}
+	// 		>
+	// 			<li key={key}>
+	// 				Désolé "{product ? product.name : 'produit'}" nest plus
+	// 				disponible
+	// 			</li>
+	// 		</CSSTransition>
+	// 	);
+	// }
+	return (
+		<CSSTransition
+			classNames="order"
+			key={key}
+			timeout={{ enter: 250, exit: 250 }}
+		>
+			<li key={key} onClick={() => this.props.deleteSaleState(key)}>
+				{product.name}
+				<span>
+					{formatPrice(quantity * product.price)}
+					<button onClick={() => this.props.deleteSaleState(key)}>
+						&#10007;
+					</button>
+				</span>
+			</li>
+		</CSSTransition>
+	);
+};
+
+*/
