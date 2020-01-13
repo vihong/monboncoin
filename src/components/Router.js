@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LandingPage from './LandingPage';
-import App from './App';
+import App from '../App';
 import NotFound from './NotFound';
 
 const Router = () => (

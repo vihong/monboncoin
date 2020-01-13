@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
-import Navbar from './Navbar';
-import Header from './Header';
-import Sales from './Sales';
-import Inventory from './Inventory';
-import Product from './Product';
-import NoProductOnlineMessage from './NoProductOnlineMessage';
-import sampleProducts from '../sample-products';
-import base from '../base';
+import Navbar from './components/Navbar';
+import Header from './components/Header';
+import Sales from './components/Sales';
+import Inventory from './components/Inventory';
+import Product from './components/Product';
+import NoProductOnlineMessage from './components/NoProductOnlineMessage';
+import sampleProducts from './sample-products';
+import base from './base';
 
 class App extends React.Component {
 	// STATE BOX
