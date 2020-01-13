@@ -210,9 +210,13 @@ ul.order
     color #EA2027
   button:hover, button:after
     background #EA2027
-  input::placeholder
-    background snow
+  input
+    background darken(snow, 1%)
     height 35px
+  input::placeholder, textarea
+    background darken(snow, 1%)
+  input:focus, textarea:focus
+    background-color lighten(lightgrey, 20%)
   
 // Menu Styles
 .list-of-fish
