@@ -9,13 +9,11 @@ import sampleProducts from './sample-products';
 import base from './base';
 
 class App extends React.Component {
-	// STATE BOX
 	state = {
 		products : {},
 		sales    : {}
 	};
 
-	// LIFECYCLE METHODS
 	componentDidMount() {
 		const { params } = this.props.match;
 		const localStorageRef = localStorage.getItem(params.dashboard);
@@ -45,7 +43,6 @@ class App extends React.Component {
 		base.removeBinding(this.ref);
 	}
 
-	// BEHAVIOUR BOX
 	addProductToState = (newProduct) => {
 		const products = { ...this.state.products };
 		products[`product${Date.now()}`] = newProduct;
@@ -64,18 +61,15 @@ class App extends React.Component {
 	};
 
 	updateProductState = (updatedProduct, key) => {
-		// alert(updatedProduct, key);
 		const products = { ...this.state.products };
 		products[key] = updatedProduct;
 		this.setState({ products });
 	};
 
 	deleteProductState = (key) => {
-		// console.log(`key of the product to delete: ${key}`);
 		const products = { ...this.state.products };
-		// console.log(products);
 		products[key] = null; // "delete products[key]" works but won't update in Firebase
-		// delete products[key];
+		// delete products[key]; might wanna keep for further addition
 		this.deleteSaleState(key);
 		this.setState({ products });
 	};
