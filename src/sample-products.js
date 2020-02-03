@@ -21,7 +21,7 @@ const products = {
 	product3 : {
 		name   : 'Guitare Acoustique Folk BON ETAT',
 		image  :
-			'https://www.superprof.fr/blog/file/2018/09/cours-guitare-ligne.jpg',
+			'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Acoustic_guitar.jpg/1200px-Acoustic_guitar.jpg',
 		desc   :
 			"Ca fait 5 ans que j'ai la guitare maintenant. Je la vends pour m'en prendre une électro-acoustique",
 		price  : 80,
