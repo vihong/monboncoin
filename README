@@ -1,0 +1,2 @@
+To deploy into production, run the following command : 
+now --prod --name monboncoin
