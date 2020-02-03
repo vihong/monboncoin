@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { formatPrice } from '../helpers';
 
 class Product extends React.Component {
-	state = {};
-
 	static propTypes = {
 		details        : PropTypes.shape({
 			name   : PropTypes.string,

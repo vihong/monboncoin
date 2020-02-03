@@ -1,33 +1,29 @@
 import React from 'react';
 
-class LoginForm extends React.Component {
-	state = {};
-
-	myInput = React.createRef();
+const LoginForm = (props) => {
+	const myInput = React.createRef();
 
 	// below, the method is bound to the instance, so "this" does have a value i.e. the instance
-	goToStore = (event) => {
+	const goToStore = (event) => {
 		event.preventDefault();
-		const clientName = this.myInput.current.value;
-		this.props.push(`/mon-compte/${clientName}`);
+		const clientName = myInput.current.value;
+		props.push(`/mon-compte/${clientName}`);
 	};
 
-	render() {
-		return (
-			<form action="" className="login-form" onSubmit={this.goToStore}>
-				<p>Connexion</p>
-				<hr />
-				<p>Comment vous appelez-vous ?</p>
-				<input
-					type="text"
-					ref={this.myInput}
-					required
-					placeholder="Entrez votre prénom..."
-				/>
-				<button type="submit">Accéder à mon espace</button>
-			</form>
-		);
-	}
-}
+	return (
+		<form action="" className="login-form" onSubmit={goToStore}>
+			<p>Connexion</p>
+			<hr />
+			<p>Comment vous appelez-vous ?</p>
+			<input
+				type="text"
+				ref={myInput}
+				required
+				placeholder="Entrez votre prénom..."
+			/>
+			<button type="submit">Accéder à mon espace</button>
+		</form>
+	);
+};
 
 export default LoginForm;
